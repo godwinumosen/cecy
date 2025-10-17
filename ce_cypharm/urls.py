@@ -1,3 +1,7 @@
+from django.urls import path
+from . import views
+#from .views import HomeView, ArticleDetailView, SecondConstructionDetailViewArticleDetailView,VideoImageDetailView
+
 urlpatterns = [
     #path('index/', views.index, name='index'),
     #path('', HomeView.as_view(), name="home"),
