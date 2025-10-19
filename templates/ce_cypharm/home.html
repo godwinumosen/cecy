@@ -5,49 +5,46 @@
 
     <body>
 
-
 <div class="container py-5">
   <div class="row g-4 justify-content-center">
 
     <div class="col-6 col-md-4 col-lg-2">
-      <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
-        <div class="display-6 text-warning mb-3">✔️</div>
-        <h6 class="fw-semibold">Pharmacist qualification standards</h6>
+      <div class="card bg-success text-white text-center p-4 h-100 shadow-sm border-0">
+        <div class="display-6 text-white mb-3">✔️</div>
+        <h6 class="fw-semibold "style="color: #fff" >Pharmacist qualification standards</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">®️</div>
-        <h6 class="fw-semibold">Pharmacist registration & publication</h6>
+        <h6 class="fw-semibold"style="color: #fff">Pharmacist registration & publication</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">🏢</div>
-        <h6 class="fw-semibold">Foreign Pharmacy Graduate Orientation</h6>
+        <h6 class="fw-semibold"style="color: #fff">Foreign Pharmacy Graduate Orientation</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">💊</div>
-        <h6 class="fw-semibold">Pharmaceutical inspectors</h6>
+        <h6 class="fw-semibold"style="color: #fff">Pharmaceutical inspectors</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">📝</div>
-        <h6 class="fw-semibold">Staff Mail</h6>
+        <h6 class="fw-semibold"style="color: #fff">Staff Mail</h6>
       </div>
     </div>
 
   </div>
 </div>
-
-
 
 
         <!-- Services Start -->
@@ -69,7 +66,12 @@
                         <div class="service-item rounded">
                            <div class="service-img rounded-top">
                              {% if first_image_category.first_category_cecypharm_image %}
-                                <img src="{{ first_image_category.first_category_cecypharm_image.url }}"height="230px"  class="img-fluid rounded-top w-100" alt="">
+                                <img 
+                                    src="{{ first_image_category.first_category_cecypharm_image.url }}" 
+                                    class="img-fluid rounded-top w-100" 
+                                    style="height: 230px; object-fit: cover;" 
+                                    alt=""
+                                    >
                               {% endif %}
                             </div>
                             <div class="service-content rounded-bottom bg-light p-4">
