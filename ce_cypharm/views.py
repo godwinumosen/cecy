@@ -28,6 +28,6 @@ class HomeView(ListView):
     def get_context_data(self, **kwargs):  
         context = super().get_context_data(**kwargs)
     #the first  category of the home page "What We Offe"
-        context['first_image_category'] = CecypharmFirstCategoryImage.objects.all()  
+        context['first_image_categorys'] = CecypharmFirstCategoryImage.objects.all()  
         
         return context   
