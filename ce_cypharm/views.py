@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.urls import reverse
 from django.urls import reverse_lazy
-#from .models import ServicesPagePicture,RealEstatePicture,FacilityManagementPicture,ConstructionPicture
+from .models import MainImageCarousel,CecypharmFirstCategoryImage
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin  
@@ -18,3 +18,16 @@ def index (request):
 
 def base_view(request):
     return render(request, 'base.html')
+
+
+#The main HomeView page
+class HomeView(ListView): 
+    model = MainImageCarousel 
+    template_name = 'ce_cypharm/home.html'
+    #This model is for the fist category of the home page "What We Offe"
+    def get_context_data(self, **kwargs):  
+        context = super().get_context_data(**kwargs)
+    #the first  category of the home page "What We Offe"
+        context['first_image_category'] = CecypharmFirstCategoryImage.objects.all()  
+        
+        return context   
