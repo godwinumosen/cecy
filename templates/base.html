@@ -45,35 +45,13 @@
         <!-- Spinner End -->
 
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-            <div class="row gx-0 align-items-center" style="height: 45px;">
-                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                    <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                        <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                        <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-flex align-items-center justify-content-end">
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-
-
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1>
-                    <img src="img/logo.png" alt="Logo"> 
+                    <!-- <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1> --> 
+                    <img src="{% static 'img/logo.png'%}" height="" width="60" alt="Logo">
+
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -117,7 +95,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem dolores laudantium quia, qui similique
+                            <p style="color: #fff;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem dolores laudantium quia, qui similique
                             </p>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
@@ -131,33 +109,31 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Quick Links</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Our Team</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Terapia Services</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> All Services</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <a href=""style="color: #fff;"><i class="fa fa-map-marker-alt me-2"></i> 123 Street, Lagos, Nig</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-envelope me-2"></i> info@cecypharm.com</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-envelope me-2"></i> info@cecypharm.com</a>
+                            <a href=""style="color: #fff;"><i class="fas fa-phone me-2"></i> +234 345 67890</a>
+                            <a href=""class="mb-3"style="color: #fff;"><i class="fas fa-print me-2"></i> +234 345 67890</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +150,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://Senwin.pythonanywhere.com">Senwin</a>
+                        <a class="border-bottom" href="https://Senwin.pythonanywhere.com"style="color: #fff;"> Designed By: Senwin</a>
                     </div>
                 </div>
             </div>
