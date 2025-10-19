@@ -30,4 +30,7 @@ class HomeView(ListView):
     #the first  category of the home page "What We Offe"
         context['first_image_categorys'] = CecypharmFirstCategoryImage.objects.all()  
         
-        return context   
+        return context  
+    
+def About (request):
+    return render (request, 'ce_cypharm/about.html') 
