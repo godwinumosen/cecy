@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from .models import MainImageCarousel,CecypharmFirstCategoryImage
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .forms import AppointmentForm
 from django.contrib.auth.mixins import LoginRequiredMixin  
 
 
