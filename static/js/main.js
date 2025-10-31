@@ -64,19 +64,18 @@
         $('.btn-play').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
 
         $('#videoModal').on('shown.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
+        });
 
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
-        })
+        });
     });
 
 
-    // testimonial carousel
+    // testimonial carousel (duplicate safe)
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
@@ -91,39 +90,50 @@
         ],
         responsiveClass: true,
         responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:1
-            },
-            992:{
-                items:1
-            },
-            1200:{
-                items:1
-            }
+            0:{ items:1 },
+            576:{ items:1 },
+            768:{ items:1 },
+            992:{ items:1 },
+            1200:{ items:1 }
         }
     });
 
     
-    
    // Back to top button
    $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
+    
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
 
 
-})(jQuery);
+    // =========================================================
+    // Service "Read More" Modal
+    // =========================================================
+    $(document).ready(function () {
+        $('.read-more-btn').on('click', function (e) {
+            e.preventDefault();
 
+            const title = $(this).data('title');
+            const description = $(this).data('description');
+            const img = $(this).data('img');
+
+            $('#serviceModalLabel').text(title);
+            $('#serviceModalBody').html(`
+                <img src="${img}" class="img-fluid rounded mb-3" style="height:300px; object-fit:cover;">
+                <p>${description}</p>
+            `);
+
+            const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+            modal.show();
+        });
+    });
+
+})(jQuery);
