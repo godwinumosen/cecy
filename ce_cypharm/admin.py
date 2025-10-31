@@ -1,7 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 from . import models
-from .models import MainImageCarousel,CecypharmFirstCategoryImage #Appointment
+from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage #Appointment
 
 
 '''class AppointmentAdmin(admin.ModelAdmin):
@@ -20,3 +20,10 @@ class CecypharmFirstCategoryImageAdmin (admin.ModelAdmin):
     prepopulated_fields = {'first_category_cecypharm_slug': ('first_category_cecypharm_title',)}
     list_display = ['first_category_cecypharm_title','first_category_cecypharm_description','first_category_cecypharm_publish_date']
 admin.site.register(CecypharmFirstCategoryImage, CecypharmFirstCategoryImageAdmin)
+
+
+#This model is for the second image what we offer 
+class CecypharmSecondCategoryImageAdmin (admin.ModelAdmin):
+    prepopulated_fields = {'second_category_cecypharm_slug': ('second_category_cecypharm_title',)}
+    list_display = ['second_category_cecypharm_title','second_category_cecypharm_description','second_category_cecypharm_publish_date']
+admin.site.register(CecypharmSecondCategoryImage, CecypharmSecondCategoryImageAdmin)

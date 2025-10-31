@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.urls import reverse
 from django.urls import reverse_lazy
-from .models import MainImageCarousel,CecypharmFirstCategoryImage
+from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import AppointmentForm
@@ -35,6 +35,8 @@ class HomeView(ListView):
         context = super().get_context_data(**kwargs)
     #the first  category of the home page "What We Offe"
         context['first_image_categorys'] = CecypharmFirstCategoryImage.objects.all()  
+    #the SECOND  category of the home page "What We Offe"
+        context['second_image_categorys'] = CecypharmSecondCategoryImage.objects.all()
         
         return context  
     

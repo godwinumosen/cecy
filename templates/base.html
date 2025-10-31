@@ -65,7 +65,6 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
                         <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -93,7 +92,7 @@
                         <div class="carousel-caption-content p-3">
                             <h1 class="display-1 text-capitalize text-white mb-4">{{ post.cecypharm_title }}</h1>
                             <p class="mb-5 fs-5 animated slideInDown">{{ post.cecypharm_description }}</p>
-                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'book_appointment' %}">Book Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +136,6 @@
                             <h4 class="mb-4 text-white">Page Links</h4>
                             <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> About Us</a>
                             <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                            <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
                             <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
                             <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
                             <a href=""style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Our Team</a>

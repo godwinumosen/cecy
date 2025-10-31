@@ -228,9 +228,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -259,21 +256,32 @@
                     </div>
                     <h1 class="display-3 mb-4">Excellent and High Quality Therapy</h1>
                     <p class="mb-0"> An efficient workflow, rapid prescription filling, and prompt service<br> 
-                        collectively contribute to creating a positive customer experience</p>
+                        collectively cor experience</p>
                 </div>
                 <div class="row g-4 justify-content-center">
+                    {% for second_image_category in second_image_categorys %}
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="blog-item rounded">
                             <div class="blog-img">
-                                <img src="{% static 'img/blog-1.jpg'%}" class="img-fluid w-100" alt="Image">
+                                {% if second_image_category.second_category_cecypharm_image %}
+                                <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 220px; object-fit: cover;" alt="Image">
+                                {% endif %}
                             </div>
                             <div class="blog-centent p-4">
-                                <a href="#" class="h4">Remove back Pain While Working on o physio</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
+                                <a href="#" class="h4">{{ second_image_category.second_category_cecypharm_title }}</a>
+                                <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
+
+                                  <a href="#" 
+                               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+                               data-title=" {{ second_image_category.second_category_cecypharm_title }}"
+                               data-description=" {{ second_image_category.second_category_cecypharm_description }}"
+                               data-img=" {{ second_image_category.second_category_cecypharm_image.url }}">
+                               Read More
+                            </a>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
