@@ -13,5 +13,6 @@ urlpatterns = [
     #path('contact/', ContactView.as_view(), name='contact'),
     path('message/', views.messages, name='message'),
     path('book/', views.book_appointment, name='book_appointment'),
+    path('dashboard/', views.appointment_dashboard, name='appointment_dashboard'),
     
 ]

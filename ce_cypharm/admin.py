@@ -1,9 +1,14 @@
 from django.contrib import admin
 # Register your models here.
 from . import models
-from .models import MainImageCarousel,CecypharmFirstCategoryImage
+from .models import MainImageCarousel,CecypharmFirstCategoryImage #Appointment
 
 
+'''class AppointmentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'date', 'time')
+    list_filter = ('date',)
+admin.site.register(Appointment, AppointmentAdmin)'''
+    
 #This model is for the fist carousel image
 class MainImageCarouselAdmin (admin.ModelAdmin):
     prepopulated_fields = {'cecypharm_slug': ('cecypharm_title',)}

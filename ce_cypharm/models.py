@@ -15,7 +15,7 @@ class MainImageCarousel(models.Model):
     cecypharm_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        ordering =['cecypharm_publish_date']
+        ordering =['-cecypharm_publish_date']
     
     def __str__(self):
         return self.cecypharm_title + ' | ' + str(self.cecypharm_author)
@@ -33,7 +33,7 @@ class CecypharmFirstCategoryImage(models.Model):
     first_category_cecypharm_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        ordering =['first_category_cecypharm_publish_date']
+        ordering =['-first_category_cecypharm_publish_date']
     
     def __str__(self):
         return self.first_category_cecypharm_title + ' | ' + str(self.first_category_cecypharm_author)
@@ -49,6 +49,10 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.TimeField()
     message = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-created_at']
 
 
     def __str__(self):
