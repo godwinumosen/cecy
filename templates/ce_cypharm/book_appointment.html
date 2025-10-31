@@ -1,14 +1,105 @@
-
 <html>
 <head>
     <title>Book an Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body { font-family: Arial, sans-serif; background: #f8f8f8; }
-        .container { max-width: 500px; margin: 50px auto; background: white; padding: 20px; border-radius: 8px; }
-        label { display: block; margin-top: 10px; }
-        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-        button { margin-top: 15px; padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #0056b3; }
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 4px rgba(0,123,255,0.3);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #007bff;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* ✅ Responsive for Mobile */
+        @media (max-width: 600px) {
+            body {
+                background: white;
+            }
+
+            .container {
+                width: 95%;
+                margin: 20px auto;
+                padding: 25px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            input, textarea, select {
+                font-size: 1.05rem;
+                padding: 14px;
+            }
+
+            button {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -22,5 +113,3 @@
     </div>
 </body>
 </html>
-
-

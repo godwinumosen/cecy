@@ -65,7 +65,7 @@
         <div class="row g-4 justify-content-center">
             {% for first_image_category in first_image_categorys %}
             <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded">
+                <div class="service-item rounded shadow-sm">
                     <div class="service-img rounded-top">
                         {% if first_image_category.first_category_cecypharm_image %}
                         <img 
@@ -80,7 +80,7 @@
                             <h5 class="mb-4">{{ first_image_category.first_category_cecypharm_title }}</h5>
                             <p class="mb-4">{{ first_image_category.first_category_cecypharm_description|truncatechars:66 }}</p>
 
-                            <!-- Read More button -->
+                            <!-- Read More Button -->
                             <a href="#" 
                                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
                                data-title="{{ first_image_category.first_category_cecypharm_title }}"
@@ -101,33 +101,27 @@
 <!-- Modal for Service Details -->
 <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="serviceModalLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+      
+      <div class="modal-header border-0 bg-primary text-white">
+        <h5 class="modal-title fw-bold" id="serviceModalLabel"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body" id="serviceModalBody"></div>
+      
+      <div class="modal-body p-0" id="serviceModalBody">
+        <!-- Dynamic Content from JS -->
+      </div>
+      
+      <div class="modal-footer d-flex justify-content-between bg-light">
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
+      </div>
+      
     </div>
   </div>
 </div>
-                </div>
-            </div>
-        </div>
-        <!-- Services End -->
 
 
-        <!-- Modal -->
-<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="serviceModalLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="serviceModalBody"></div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -142,20 +136,20 @@
                             <div class="about-img-inner">
                                 <img src="{% static 'img/about-2.jpg'%}" class="img-fluid rounded-circle w-100 h-100" alt="Image">
                             </div>
-                            <div class="about-experience">15 years experience</div>
+                            <div class="about-experience"> 5 years experience</div>
                         </div>
                     </div>
                     <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
                         <div class="section-title text-start mb-5">
-                            <h4 class=" pe-3 mb-0">About Us</h4>
+                            <h4 class=" pe-3 mb-0">Insightful</h4>
                             <h1 class="display-3 mb-4">We are Ready to Help Improve Your Treatment.</h1>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                            <p class="mb-4">With Ce-cypharm, you’re never alone on your health journey — we’re here every step of the way to ensure better outcomes and lasting wellness.</p>
                             <div class="mb-4">
+                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Our dedicated team ensures you get the right medication</p>
+                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Trusted health advice, and ongoing support.</p>
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Refresing to get such a personal touch.</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Duis aute irure dolor in reprehenderit in voluptate.</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
-                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Discover More</a>
+                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Read More</a>
                         </div>
                     </div>
                 </div>
