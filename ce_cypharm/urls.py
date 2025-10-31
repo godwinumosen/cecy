@@ -11,7 +11,7 @@ urlpatterns = [
     #path('about/', AboutView.as_view(), name='about'),
     path('about/', views.About, name='about'),
     #path('contact/', ContactView.as_view(), name='contact'),
-    path('message/', views.message, name='message'),
+    path('message/', views.messages, name='message'),
     path('book/', views.book_appointment, name='book_appointment'),
     
 ]

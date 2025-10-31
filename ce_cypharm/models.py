@@ -49,7 +49,7 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.TimeField()
     message = models.TextField(blank=True)
-    cecypharm_author = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return f"{self.name} - {self.date} at {self.time}"

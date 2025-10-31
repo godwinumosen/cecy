@@ -35,3 +35,18 @@ class HomeView(ListView):
     
 def About (request):
     return render (request, 'ce_cypharm/about.html') 
+
+
+def book_appointment(request):
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'ce_cypharm/success.html')
+    else:
+        form = AppointmentForm()
+    return render(request, 'ce_cypharm/book_appointment.html', {'form': form})
+
+
+def messages (request):
+    return render (request, 'ce_cypharm/message.html', {})
