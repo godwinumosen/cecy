@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Frequently Asked Questions - Ce-cypharm{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background: url("{% static 'img/images/blog-1.jpg' %}") no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+
+  .faq-section {
+    position: relative;
+    padding: 140px 0 100px; /* Space for navbar */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    padding: 40px 35px;
+    animation: fadeIn 1s ease;
+  }
+
+  .faq-container h2 {
+    text-align: center;
+    color: #0069d9;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    font-weight: bold;
+    color: #0056b3;
+    cursor: pointer;
+    font-size: 1.1rem;
+    position: relative;
+  }
+
+  .faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+  }
+
+  .faq-item.active .faq-question::after {
+    content: "-";
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 8px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .faq-container {
+      padding: 25px;
+    }
+    .faq-container h2 {
+      font-size: 1.6rem;
+    }
+    .faq-question {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="faq-section">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">What services does Ce-cypharm provide?</div>
+      <div class="faq-answer">We offer pharmaceutical consultation, prescription refills, health education, and professional guidance on drug use and patient care.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I book an appointment?</div>
+      <div class="faq-answer">You can easily book an appointment through our online appointment page. Simply fill out the form, and one of our representatives will get back to you shortly.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you provide home delivery for medications?</div>
+      <div class="faq-answer">Yes! We provide safe and timely home delivery for prescriptions within our service areas.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I consult a pharmacist online?</div>
+      <div class="faq-answer">Absolutely. Our telepharmacy service allows you to consult our pharmacists remotely for professional advice.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What are your operating hours?</div>
+      <div class="faq-answer">We are open Monday to Saturday, 8:00 AM – 6:00 PM. You can still reach us online outside working hours.</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Toggle FAQ answers
+  document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
+{% endblock %}

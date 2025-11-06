@@ -13,6 +13,9 @@ urlpatterns = [
     #path('contact/', ContactView.as_view(), name='contact'),
     path('message/', views.messages, name='message'),
     path('book/', views.book_appointment, name='book_appointment'),
+    path('faq/', views.faq, name='faq'),
+    path('terms/', views.terms, name='terms'),
+    path('download-terms/', views.download_terms, name='download_terms'),
     path('dashboard/', views.appointment_dashboard, name='appointment_dashboard'),
     
 ]

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Terms and Conditions - Ce-cypharm{% endblock %}
+
+{% block content %}
+<style>
+  .terms-section {
+    padding: 120px 0 80px;
+    background: #f9fbff;
+  }
+
+  .terms-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 1s ease;
+  }
+
+  .terms-container h2 {
+    text-align: center;
+    color: #0069d9;
+    margin-bottom: 30px;
+  }
+
+  .terms-container h4 {
+    margin-top: 25px;
+    color: #003c7a;
+    font-weight: 600;
+  }
+
+  .terms-container p {
+    margin-top: 10px;
+    color: #333;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .terms-container {
+      padding: 25px 20px;
+    }
+  }
+</style>
+
+<section class="terms-section">
+  <div class="container terms-container">
+    <h2>Terms and Conditions</h2>
+
+    <p>Welcome to Ce-cypharm Limited. By using our website or engaging our services, you agree to comply with the following Terms and Conditions. Please read them carefully.</p>
+
+    <h4>1. Acceptance of Terms</h4>
+    <p>By accessing this website, you confirm that you accept these terms of use and agree to comply with them. If you do not agree, please discontinue use of our website.</p>
+
+    <h4>2. Our Services</h4>
+    <p>Ce-cypharm provides health-related information, pharmacy services, and wellness products to help customers achieve optimum health. While we strive for accuracy, our content should not replace professional medical advice.</p>
+
+    <h4>3. Privacy Policy</h4>
+    <p>We respect your privacy. Any personal information collected through this website will be handled in accordance with our Privacy Policy.</p>
+
+    <h4>4. Intellectual Property</h4>
+    <p>All materials, including text, graphics, logos, and images, are owned or licensed by Ce-cypharm. You may not reproduce, distribute, or modify any content without prior written consent.</p>
+
+    <h4>5. Limitation of Liability</h4>
+    <p>Ce-cypharm will not be liable for any damages arising from the use of our website or products, including indirect or consequential loss.</p>
+
+    <h4>6. Links to Other Websites</h4>
+    <p>Our website may contain links to external sites. Ce-cypharm has no control over these and is not responsible for their content or privacy practices.</p>
+
+    <h4>7. Changes to Terms</h4>
+    <p>We may update these Terms and Conditions from time to time. Please check this page regularly to stay informed of any changes.</p>
+
+    <h4>8. Contact Us</h4>
+    <p>If you have any questions about these Terms, please contact us at <a href="mailto:info@cecypharm.com">info@cecypharm.com</a>.</p>
+
+    <p style="margin-top: 25px; text-align:center; color:#555;">
+      Last Updated: November 2025
+    </p>
+
+
+
+<p style="text-align:center; margin-top:25px;">
+  <a href="{% url 'download_terms' %}" class="btn btn-primary rounded-pill px-4 py-2">
+    <i class="fas fa-file-pdf me-2"></i> Download Terms (PDF)
+  </a>
+</p>
+
+
+
+
+  </div>
+</section>
+{% endblock %}

@@ -16,6 +16,8 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.http import FileResponse, Http404
+import os
 from django.contrib.auth.mixins import LoginRequiredMixin  
 
 
@@ -98,6 +100,23 @@ def appointment_dashboard(request):
     appointments = Appointment.objects.all().order_by('-created_at')
     return render(request, 'ce_cypharm/dashboard.html', {'appointments': appointments})
 
+def faq (request):
+    return render (request, 'ce_cypharm/faq.html', {})
+
+def terms (request):
+    return render (request, 'ce_cypharm/terms.html', {})
+
+def download_terms(request):
+    file_path = os.path.join(settings.STATIC_ROOT, 'img/images/cecypharm_terms_conditions.pdf')
+    
+    # If you’re using STATICFILES_DIRS in dev mode:
+    if not os.path.exists(file_path):
+        file_path = os.path.join(settings.BASE_DIR, 'static/img/images/cecypharm_terms_conditions.pdf')
+
+    if os.path.exists(file_path):
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename='cecypharm_terms_conditions.pdf')
+    else:
+        raise Http404("File not found")
 
 def messages (request):
     return render (request, 'ce_cypharm/message.html', {})
