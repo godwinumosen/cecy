@@ -1,115 +1,131 @@
+{% load static %}
 <html>
 <head>
-    <title>Book an Appointment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url("{% static 'img/images/blog-1.jpg' %}") no-repeat center center;
+      background-size: contain;
+      background-attachment: fixed;
+      background-color: #f2f8ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+    }
 
-        .container {
-            max-width: 600px;
-            width: 90%;
-            margin: 60px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: 0;
+    }
 
-        h2 {
-            text-align: center;
-            color: #007bff;
-            font-size: 2rem;
-            margin-bottom: 25px;
-        }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 360px; /* 👈 smaller width */
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      padding: 22px 20px; /* 👈 reduced padding */
+      backdrop-filter: blur(6px);
+      animation: fadeIn 0.8s ease;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 1rem;
-            color: #333;
-        }
+    h2 {
+      text-align: center;
+      color: #0069d9;
+      font-size: 1.5rem; /* 👈 smaller heading */
+      margin-bottom: 15px;
+      letter-spacing: 0.3px;
+    }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 12px 14px;
-            margin-top: 6px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
+    /* Add a little space above first label (Name) */
+    .container form label:first-of-type {
+      margin-top: 15px;
+      display: block;
+    }
 
-        input:focus, textarea:focus, select:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 4px rgba(0,123,255,0.3);
-        }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 0.9rem; /* 👈 slightly smaller font */
+      color: #333;
+    }
 
-        button {
-            width: 100%;
-            margin-top: 25px;
-            padding: 14px;
-            background: #007bff;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.9rem; /* 👈 smaller text */
+      transition: all 0.2s ease;
+    }
 
-        button:hover {
-            background: #0056b3;
-        }
+    input:focus, textarea:focus, select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      outline: none;
+    }
 
-        /* ✅ Responsive for Mobile */
-        @media (max-width: 600px) {
-            body {
-                background: white;
-            }
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.1s;
+    }
 
-            .container {
-                width: 95%;
-                margin: 20px auto;
-                padding: 25px;
-                border-radius: 0;
-                box-shadow: none;
-            }
+    button:hover {
+      background: #0056b3;
+      transform: translateY(-1px);
+    }
 
-            h2 {
-                font-size: 1.7rem;
-            }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-            input, textarea, select {
-                font-size: 1.05rem;
-                padding: 14px;
-            }
-
-            button {
-                font-size: 1.1rem;
-                padding: 15px;
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+      .container {
+        max-width: 90%;
+        padding: 18px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Book an Appointment</h2>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+  <div class="overlay"></div>
+  <div class="container">
+    <h2>Book an Appointment</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
