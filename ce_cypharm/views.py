@@ -120,3 +120,6 @@ def download_terms(request):
 
 def messages (request):
     return render (request, 'ce_cypharm/message.html', {})
+
+def contact (request):
+    return render (request, 'ce_cypharm/contact.html', {})
