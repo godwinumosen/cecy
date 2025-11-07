@@ -219,30 +219,40 @@
                         collectively cor experience</p>
                 </div>
                 <div class="row g-4 justify-content-center">
-                    {% for second_image_category in second_image_categorys %}
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                {% if second_image_category.second_category_cecypharm_image %}
-                                <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 220px; object-fit: cover;" alt="Image">
-                                {% endif %}
-                            </div>
-                            <div class="blog-centent p-4">
-                                <a href="#" class="h4">{{ second_image_category.second_category_cecypharm_title }}</a>
-                                <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
+  {% for second_image_category in second_image_categorys %}
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="blog-item rounded">
+      <div class="blog-img">
+        {% if second_image_category.second_category_cecypharm_image %}
+        <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 220px; object-fit: cover;" alt="Image">
+        {% endif %}
+      </div>
 
-                                  <a href="#" 
-                               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
-                               data-title=" {{ second_image_category.second_category_cecypharm_title }}"
-                               data-description=" {{ second_image_category.second_category_cecypharm_description }}"
-                               data-img=" {{ second_image_category.second_category_cecypharm_image.url }}">
-                               Read More
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+      <div class="blog-centent p-4">
+        <!-- ✅ Title now clickable just like Read More -->
+        <a href="#" 
+           class="h4 read-more-btn d-block mb-2 text-decoration-none"
+           data-title="{{ second_image_category.second_category_cecypharm_title }}"
+           data-description="{{ second_image_category.second_category_cecypharm_description }}"
+           data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
+           {{ second_image_category.second_category_cecypharm_title }}
+        </a>
+
+        <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
+
+        <a href="#" 
+           class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+           data-title="{{ second_image_category.second_category_cecypharm_title }}"
+           data-description="{{ second_image_category.second_category_cecypharm_description }}"
+           data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
+           Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
             </div>
         </div>
         <!-- Blog End -->

@@ -93,19 +93,20 @@ def book_appointment(request):
     return render(request, 'ce_cypharm/book_appointment.html', {'form': form})
 
 
-
-
 def appointment_dashboard(request):
     # Order by created_at descending — newest first
     appointments = Appointment.objects.all().order_by('-created_at')
     return render(request, 'ce_cypharm/dashboard.html', {'appointments': appointments})
 
+#This is frequently ask question view 
 def faq (request):
     return render (request, 'ce_cypharm/faq.html', {})
 
+#This view is for the Terms and conditions 
 def terms (request):
     return render (request, 'ce_cypharm/terms.html', {})
 
+#This is for the pdf downloader 
 def download_terms(request):
     file_path = os.path.join(settings.STATIC_ROOT, 'img/images/cecypharm_terms_conditions.pdf')
     
@@ -120,6 +121,7 @@ def download_terms(request):
 
 def messages (request):
     return render (request, 'ce_cypharm/message.html', {})
+
 
 def contact (request):
     return render (request, 'ce_cypharm/contact.html', {})
