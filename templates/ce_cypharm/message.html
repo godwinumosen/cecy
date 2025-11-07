@@ -1,54 +1,114 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-  </head>
     <style>
       body {
         text-align: center;
-        padding: 40px 0;
+        padding: 40px 15px;
         background: #EBF0F5;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
       }
-        h1 {
-          color: #4169E1;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-weight: 900;
-          font-size: 40px;
-          margin-bottom: 10px;
-        }
-        p {
-          color: #404F5E;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:20px;
-          margin: 0;
-        }
-      i {
-        color: #fff;
-        font-size: 100px;
-        line-height: 200px;
-        margin-left:-15px;
-      }
+
       .card {
         background: white;
-        padding: 60px;
-        border-radius: 4px;
-        box-shadow: 0 2px 3px #C8D0D8;
+        padding: 40px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         display: inline-block;
-        margin: 0 auto;
+        margin: 40px auto;
+        max-width: 420px;
+        width: 100%;
+      }
+
+      .circle {
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        background: #198754;
+        margin: 0 auto 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .checkmark {
+        color: #fff;
+        font-size: 80px;
+        line-height: 1;
+      }
+
+      h1 {
+        color: #198754;
+        font-weight: 900;
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #198754;
+        font-size: 18px;
+        margin: 0 0 15px;
+        line-height: 1.5;
+      }
+
+      a.btn-back {
+        display: inline-block;
+        background: #198754;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 6px;
+        font-size: 18px;
+        margin-top: 15px;
+        transition: background 0.3s;
+      }
+
+      a.btn-back:hover {
+        background: #146c43;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        .card {
+          padding: 30px 20px;
+        }
+
+        .circle {
+          height: 120px;
+          width: 120px;
+        }
+
+        .checkmark {
+          font-size: 60px;
+        }
+
+        h1 {
+          font-size: 26px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        a.btn-back {
+          font-size: 16px;
+          padding: 10px 25px;
+        }
       }
     </style>
+  </head>
 
-    <body>
-      <div class="card">
-      <div style="border-radius:200px; height:200px; width:200px; background: #4169E1; margin:0 auto;">
+  <body>
+    <div class="card">
+      <div class="circle">
         <i class="checkmark">✓</i>
       </div>
       {% for message in messages %}
-        <h1>Success</h1> 
+        <h1>Success</h1>
         <p>{{ message }}</p>
-        {% endfor %}
-        <small>
-          <a style="font-family: Georgia;" href="{% url 'home' %}" class="btn btn-info"><h1>Back</h1></a> 
-       </small>
-      </div>
-    </body>
+      {% endfor %}
+      <a href="{% url 'home' %}" class="btn-back">Back to Home</a>
+    </div>
+  </body>
 </html>

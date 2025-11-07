@@ -119,9 +119,22 @@ def download_terms(request):
     else:
         raise Http404("File not found")
 
-def messages (request):
-    return render (request, 'ce_cypharm/message.html', {})
-
 
 def contact (request):
-    return render (request, 'ce_cypharm/contact.html', {})
+    email='cecypharm@gmail.com'
+    if request.method == 'POST':
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message_subject = request.POST['message-subject']
+        message = request.POST['message'] 
+        messages.success(request, f'Your email was Successfully sent to Jollo and Chill {message_name}..!')
+        return redirect('/message')
+    else:
+        context={
+            'email':email
+        } 
+        return render(request, 'ce_cypharm/contact.html', {})
+    
+    
+def message (request):
+    return render (request, 'ce_cypharm/message.html', {})
