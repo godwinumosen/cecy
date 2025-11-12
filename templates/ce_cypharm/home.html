@@ -117,38 +117,36 @@
 
 
 
-        <!-- About Start -->
-        <div class="container-fluid about bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="about-img pb-5 ps-5">
-                            <img src="{% static 'img/cecy.jpg'%}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
-                            
-                            <div class="about-experience"> 05 years experience</div>
-                        </div>
+<!-- About Start -->
+<div class="container-fluid about bg-light py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <!-- Text Column First -->
+            <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="section-title text-start mb-5">
+                    <h1 class="display-3 mb-4">Empowering You to Live Better.</h1>
+                    <p class="mb-4">At CE-CyPharm, we believe that healthcare is more than just filling prescriptions, it’s about partnership, trust, and personalized care. With us, you’re never alone on your health journey. Every step, every question, and every concern matters, and our dedicated team is here to guide you toward better outcomes and lasting wellness. We combine expert knowledge, modern pharmacy practices, and compassionate service to ensure that your experience is safe, seamless, and supportive. From accurate medication dispensing to proactive health advice, CE-CyPharm is committed to empowering you to take charge of your health with confidence. Your well-being is our priority — because at CE-CyPharm, caring is at the heart of everything we do.</p>
+                    <div class="mb-4">
+                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Our dedicated team ensures you get the right medication</p>
+                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Trusted health advice, and ongoing support.</p>
+                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Refreshing to get such a personal touch.</p>
                     </div>
-                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="section-title text-start mb-5">
-                            <h1 class="display-3 mb-4">Empowering You to Live Better.</h1>
-                            <p class="mb-4">At CE-CyPharm, we believe that healthcare is more than just filling prescriptions, it’s about partnership, trust, and personalized care. With us, you’re never alone on your health journey. Every step, every question, 
-                              and every concern matters, and our dedicated team is here to guide you toward better outcomes and 
-                              lasting wellness. We combine expert knowledge, modern pharmacy practices, and compassionate service 
-                              to ensure that your experience is safe, seamless, and supportive. From accurate medication dispensing 
-                              to proactive health advice, CE-CyPharm is committed to empowering you to take charge of your health with 
-                              confidence. Your well-being is our priority — because at CE-CyPharm, caring is at the heart of everything we do.</p>
-                            <div class="mb-4">
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Our dedicated team ensures you get the right medication</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Trusted health advice, and ongoing support.</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Refresing to get such a personal touch.</p>
-                            </div>
-                            <a href="{% url 'about'%}" class="btn btn-primary rounded-pill text-white py-3 px-5">Read More</a>
-                        </div>
-                    </div>
+                    <a href="{% url 'about'%}" class="btn btn-primary rounded-pill text-white py-3 px-5">Read More</a>
+                </div>
+            </div>
+
+            <!-- Image Column Second -->
+            <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="about-img pb-5 pe-5">
+                    <img src="{% static 'img/cecy.jpg'%}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
+                   <!-- <div class="about-experience">05 years experience</div>-->
                 </div>
             </div>
         </div>
-        <!-- About End -->
+    </div>
+</div>
+<!-- About End -->
+
 
         <!-- Feature Start -->
         <div class="container-fluid feature py-5">
@@ -223,7 +221,7 @@
     <div class="blog-item rounded">
       <div class="blog-img">
         {% if second_image_category.second_category_cecypharm_image %}
-        <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 220px; object-fit: cover;" alt="Image">
+        <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="Image">
         {% endif %}
       </div>
 
