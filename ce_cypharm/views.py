@@ -138,3 +138,6 @@ def contact (request):
     
 def message (request):
     return render (request, 'ce_cypharm/message.html', {})
+
+def our_team (request):
+    return render (request, 'ce_cypharm/our_team.html', {})
