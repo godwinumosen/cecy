@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+  <div class="container text-center py-5" style="max-width: 900px;">
+    <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Ce-cypharm Blog</h3>
+  </div>
+</div>
+<!-- Header End -->
+
+<!-- Blog Start -->
+<section class="container-fluid blog py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="display-3 mb-4">Excellent and High Quality Pharmacy</h1>
+      <p class="mb-0">
+        Discover health tips, product insights, and wellness stories from our Ce-cypharm experts.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for post in blogs %}
+      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            <img src="{{ post.image.url }}" class="img-fluid w-100" style="height: 220px; object-fit: cover;" alt="{{ post.title }}">
+          </div>
+          <div class="blog-centent p-4">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted">
+                <i class="fa fa-calendar-alt text-primary"></i> {{ post.date_posted|date:"d M Y" }}
+              </p>
+              <span class="text-muted"><i class="fa fa-user text-primary"></i> {{ post.author }}</span>
+            </div>
+            <a href="#" class="h4 d-block mb-3">{{ post.title }}</a>
+            <p class="my-4">{{ post.description|truncatechars:100 }}</p>
+             <a href="#" 
+                               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+                               data-title="{{ first_image_category.first_category_cecypharm_title }}"
+                               data-description="{{ first_image_category.first_category_cecypharm_description }}"
+                               data-img="{{ first_image_category.first_category_cecypharm_image.url }}">
+                               Read More
+                            </a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center text-muted">No blog posts available yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Blog End -->
+
+<!-- Modal for Service Details -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+      
+      <div class="modal-header border-0 bg-primary text-white">
+        <h5 class="modal-title fw-bold" id="serviceModalLabel"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body p-0" id="serviceModalBody">
+        <!-- Dynamic Content from JS -->
+      </div>
+      
+      <div class="modal-footer d-flex justify-content-between bg-light">
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

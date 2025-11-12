@@ -77,3 +77,17 @@ class CecypharmSecondCategoryImage(models.Model):
     
     def get_absolute_url(self):
         return reverse('home',)
+    
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to='blog_images/')
+    author = models.CharField(max_length=100, default='Ce-cypharm')
+    date_posted = models.DateField(auto_now_add=True)
+    
+    class Meta:
+        ordering =['-date_posted']
+
+    def __str__(self):
+        return self.title

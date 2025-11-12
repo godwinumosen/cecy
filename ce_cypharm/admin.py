@@ -1,7 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 from . import models
-from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage #Appointment
+from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage,BlogPost #Appointment
 
 
 '''class AppointmentAdmin(admin.ModelAdmin):
@@ -27,3 +27,9 @@ class CecypharmSecondCategoryImageAdmin (admin.ModelAdmin):
     prepopulated_fields = {'second_category_cecypharm_slug': ('second_category_cecypharm_title',)}
     list_display = ['second_category_cecypharm_title','second_category_cecypharm_description','second_category_cecypharm_publish_date']
 admin.site.register(CecypharmSecondCategoryImage, CecypharmSecondCategoryImageAdmin)
+
+@admin.register(BlogPost)
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'date_posted')
+    search_fields = ('title', 'author')
+    list_filter = ('date_posted',)

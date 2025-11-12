@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.urls import reverse
 from django.urls import reverse_lazy
-from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage
+from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage,BlogPost
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import AppointmentForm
@@ -141,3 +141,10 @@ def message (request):
 
 def our_team (request):
     return render (request, 'ce_cypharm/our_team.html', {})
+
+def blog (request):
+    return render (request, 'ce_cypharm/blog.html', {})
+
+def blog(request):
+    blogs = BlogPost.objects.all().order_by('-date_posted')
+    return render(request, 'ce_cypharm/blog.html', {'blogs': blogs})

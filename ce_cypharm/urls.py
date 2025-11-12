@@ -18,5 +18,7 @@ urlpatterns = [
     path('download-terms/', views.download_terms, name='download_terms'),
     path('dashboard/', views.appointment_dashboard, name='appointment_dashboard'),
     path('our_team/', views.our_team, name='our_team'),
+    path('blog/', views.blog, name='blog'),
+    
     
 ]
