@@ -27,6 +27,7 @@
 }
 
 
+
 .back-to-top {
     position: fixed;
     right: 30px;
@@ -453,6 +454,7 @@ h3, .h3, h2, .h2, h1, .h1 h3, .h3, h2, .h2, h1, .h1 {
     .header-carousel .header-carousel-item img {
         margin-top: 0;
         transition: 0.5s;
+        max-height: 430;
     }
 
 }
