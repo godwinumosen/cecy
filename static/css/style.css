@@ -456,7 +456,6 @@ h3, .h3, h2, .h2, h1, .h1 h3, .h3, h2, .h2, h1, .h1 {
         transition: 0.5s;
         max-height: 400;
     }
-
 }
 
 @media (min-width: 992px) {
