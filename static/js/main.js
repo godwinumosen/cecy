@@ -36,7 +36,6 @@
     dots: false,
     loop: true,
     //nav : false,   // arrows disabled
-    //navText : [],  // removed arrow icons
     });
 
 
