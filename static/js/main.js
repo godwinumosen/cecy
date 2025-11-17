@@ -27,18 +27,16 @@
 
 
     // Hero Header carousel
+
     $(".header-carousel").owlCarousel({
-        animateOut: 'slideOutDown',
-        items: 1,
-        autoplay: true,
-        smartSpeed: 1000,
-        dots: false,
-        loop: true,
-        nav : false,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
-        ],
+    animateOut: 'slideOutDown',
+    items: 1,
+    autoplay: true,
+    smartSpeed: 1000,
+    dots: false,
+    loop: true,
+    //nav : false,   // arrows disabled
+    navText : [],  // removed arrow icons
     });
 
 
