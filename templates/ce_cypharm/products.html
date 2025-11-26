@@ -1,52 +1,94 @@
-<!-- products/templates/products/product_page.html -->
+{% extends "base.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-<div class="container mt-5">
-    <h1 class="mb-4">Our Products</h1>
-    <div class="row">
-        {% for category in categories %}
-        <div class="col-md-3 text-center mb-4">
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+  <div class="container text-center py-5" style="max-width: 900px;">
+    <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Products</h3>
+  </div>
+</div>
+<!-- Header End -->
+
+<!-- Products Start -->
+<section class="container-fluid blog py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="display-3 mb-4">Excellent and High Quality Pharmacy Products</h1>
+      <p class="mb-0">
+        Explore our high-quality products across different categories.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for category in categories %}
+      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
             {% if category.image %}
-                <img src="{{ category.image.url }}" class="img-fluid rounded" alt="{{ category.name }}">
+              <img src="{{ category.image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="{{ category.name }}">
             {% else %}
-                <img src="{% static 'images/placeholder.png' %}" class="img-fluid rounded" alt="{{ category.name }}">
+              <img src="{% static 'images/placeholder.png' %}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="{{ category.name }}">
             {% endif %}
-            <h5 class="mt-2">{{ category.name }}</h5>
-            <button class="btn btn-primary mt-1" data-bs-toggle="modal" data-bs-target="#modal{{ category.id }}">View Products</button>
+          </div>
+          <div class="blog-centent p-4">
+            <h4 class="d-block mb-3">{{ category.name }}</h4>
+            <p class="my-4 text-muted">{{ category.description|default:"High-quality products in this category." }}</p>
+            <!-- View Products Button -->
+            <button type="button" 
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modal-{{ category.id }}">
+              View Products
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="modal{{ category.id }}" tabindex="-1" aria-labelledby="modalLabel{{ category.id }}" aria-hidden="true">
-          <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel{{ category.id }}">{{ category.name }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
+      <!-- Modal for products in this category -->
+      <div class="modal fade" id="modal-{{ category.id }}" tabindex="-1" aria-labelledby="modalLabel-{{ category.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel-{{ category.id }}">{{ category.name }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {% if category.products.all %}
                 {% for product in category.products.all %}
-                  <div class="mb-3 d-flex align-items-start">
-                    {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="me-3" style="width:80px; height:80px; object-fit:cover;">
+                <div class="mb-3 d-flex align-items-start">
+                  {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="me-3 rounded" style="width:80px; height:80px; object-fit:cover;">
+                  {% else %}
+                    <img src="{% static 'img/placeholder.png' %}" alt="{{ product.name }}" class="me-3 rounded" style="width:80px; height:80px; object-fit:cover;">
+                  {% endif %}
+                  <div>
+                    <h6>{{ product.name }}</h6>
+                    <p>{{ product.description }}</p>
+                    <p><strong>NAFDAC:</strong> {{ product.nafdac_number }}</p>
+                    {% if product.datasheet %}
+                      <a href="{{ product.datasheet.url }}" target="_blank">Download Datasheet</a>
                     {% endif %}
-                    <div>
-                        <h6>{{ product.name }}</h6>
-                        <p>{{ product.description }}</p>
-                        <p><strong>NAFDAC:</strong> {{ product.nafdac_number }}</p>
-                        {% if product.datasheet %}
-                            <a href="{{ product.datasheet.url }}" target="_blank">Download Datasheet</a>
-                        {% endif %}
-                        <p class="mt-1"><strong>To order:</strong> Call +234XXXXXXXXX</p>
-                    </div>
+                    <p class="mt-1"><strong>To order:</strong> Call +234XXXXXXXXX</p>
                   </div>
-                  <hr>
+                </div>
+                <hr>
                 {% endfor %}
-              </div>
+              {% else %}
+                <p>No products available in this category.</p>
+              {% endif %}
             </div>
           </div>
         </div>
-        {% endfor %}
+      </div>
+
+      {% empty %}
+      <p class="text-center text-muted">No product categories available yet.</p>
+      {% endfor %}
     </div>
-</div>
+  </div>
+</section>
+<!-- Products End -->
+
+{% endblock %}
