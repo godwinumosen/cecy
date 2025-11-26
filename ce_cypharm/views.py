@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.urls import reverse_lazy
 from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage,BlogPost
+from .models import Category
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import AppointmentForm
@@ -148,3 +149,9 @@ def blog (request):
 def blog(request):
     blogs = BlogPost.objects.all().order_by('-date_posted')
     return render(request, 'ce_cypharm/blog.html', {'blogs': blogs})
+#-----------------------------------------------------------------------------------------------
+
+
+def products(request):
+    categories = Category.objects.prefetch_related('products').all()
+    return render(request, 'ce_cypharm/products.html', {'categories': categories})
