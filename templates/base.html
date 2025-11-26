@@ -65,21 +65,36 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
                           <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Who We Are</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{% url 'about' %}" class="dropdown-item">About Ce-cypharm</a>
-                                <a href="{% url 'our_team' %}" class="dropdown-item">Our Team</a>
+                                <a href=" " class="dropdown-item">Mission</a>
+                                <a href=" " class="dropdown-item">Vision</a>
+                                <a href="{% url 'our_team' %}" class="dropdown-item">Team profile(s)</a>
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu m-0">
+                                <a href=" " class="dropdown-item">Devices</a>
+                                <a href=" " class="dropdown-item">Wound Care</a>
+                                <a href=" " class="dropdown-item">Respiratory</a>
+                                <a href=" " class="dropdown-item">Skin Glue</a>
+                                <a href=" " class="dropdown-item">OTC</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                             <div class="dropdown-menu m-0">
+                                <a href=" " class="dropdown-item">COAs</a>
+                                <a href=" " class="dropdown-item">Manuals</a>
+                                <a href=" " class="dropdown-item">Clinical Leaflets</a>
                                 <a href="{% url 'blog' %}" class="dropdown-item">Blog Post</a>
                                 <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
                                 <a href="{% url 'terms' %}" class="dropdown-item">Terms/Condition</a>
                             </div>
                         </div>
-                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="{% url 'book_appointment' %}" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0"target="_blank">Book Appointment</a>
                 </div>
