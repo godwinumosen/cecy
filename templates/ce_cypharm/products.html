@@ -34,7 +34,7 @@
           </div>
           <div class="blog-centent p-4">
             <h4 class="d-block mb-3">{{ category.name }}</h4>
-            <p class="my-4 text-muted">{{ category.description|default:"High-quality products in this category." }}</p>
+             <!-- <p class="my-4 text-muted">{{ category.description|default:"Quality products." }}</p> -->
             <!-- View Products Button -->
             <button type="button" 
                     class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
@@ -59,7 +59,7 @@
                 {% for product in category.products.all %}
                 <div class="mb-3 d-flex align-items-start">
                   {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="me-3 rounded" style="width:80px; height:80px; object-fit:cover;">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="me-3 rounded" style="width:250px; height:180px; object-fit:cover;">
                   {% else %}
                     <img src="{% static 'img/placeholder.png' %}" alt="{{ product.name }}" class="me-3 rounded" style="width:80px; height:80px; object-fit:cover;">
                   {% endif %}
@@ -68,7 +68,7 @@
                     <p>{{ product.description }}</p>
                     <p><strong>NAFDAC:</strong> {{ product.nafdac_number }}</p>
                     {% if product.datasheet %}
-                      <a href="{{ product.datasheet.url }}" target="_blank">Download Datasheet</a>
+                      <a href="{{ product.datasheet.url }}" target="_blank">Download Datasheet</a><br>
                     {% endif %}
                     <p class="mt-1"><strong>To order:</strong> Call +234XXXXXXXXX</p>
                   </div>

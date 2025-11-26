@@ -36,12 +36,12 @@
             </div>
             <a href="#" class="h4 d-block mb-3">{{ post.title }}</a>
             <p class="my-4">{{ post.description|truncatechars:100 }}</p>
-             <a href="#" 
-                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
-                data-title="{{ post.title }}}"
-                data-description="{{ post.description }}"
-                data-img="{{ post.image.url }}">
-                Read More
+            <a href="#" 
+               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+               data-title="{{ post.title }}"
+               data-description="{{ post.description }}"
+               data-img="{{ post.image.url }}">
+               Read More
             </a>
           </div>
         </div>
@@ -58,24 +58,26 @@
 <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
-      
-      <div class="modal-header border-0 bg-primary text-white">
+
+      <!-- Modal Header (White) -->
+      <div class="modal-header border-0 bg-white text-dark">
         <h5 class="modal-title fw-bold" id="serviceModalLabel"></h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      
+
+      <!-- Modal Body -->
       <div class="modal-body p-0" id="serviceModalBody">
         <!-- Dynamic Content from JS -->
       </div>
-      
+
+      <!-- Modal Footer -->
       <div class="modal-footer d-flex justify-content-between bg-light">
         <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
         <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
       </div>
-      
+
     </div>
   </div>
 </div>
-
 
 {% endblock %}
