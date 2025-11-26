@@ -1,109 +1,111 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content%}
-
-
-<body>
+{% block content %}
 
 <div class="container py-5">
   <div class="row g-4 justify-content-center">
 
+    <!-- Cards Section -->
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-white text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-white mb-3">✔️</div>
-        <h6 class="fw-semibold "style="color: #fff" >Pharmacist qualification standards</h6>
+        <h6 class="fw-semibold" style="color: #fff">Pharmacist qualification standards</h6>
       </div>
     </div>
-
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">🏢</div>
-        <h6 class="fw-semibold"style="color: #fff">Locations & Directions <br>find our locations.</h6>
+        <h6 class="fw-semibold" style="color: #fff">Locations & Directions <br>find our locations.</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">💊</div>
-        <h6 class="fw-semibold"style="color: #fff">Pharmaceutical inspectors</h6>
+        <h6 class="fw-semibold" style="color: #fff">Pharmaceutical inspectors</h6>
       </div>
     </div>
 
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card bg-success text-warning text-center p-4 h-100 shadow-sm border-0">
         <div class="display-6 text-warning mb-3">📝</div>
-        <h6 class="fw-semibold"style="color: #fff">Appointments <br> get in person or virtual care you need.</h6>
+        <h6 class="fw-semibold" style="color: #fff">Appointments <br> get in person or virtual care you need.</h6>
       </div>
     </div>
 
   </div>
 </div>
 
-
-<!-- Services Start -->
+<!-- Services Section -->
 <div class="container-fluid service py-5">
-    <div class="container py-5">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
-            <h1 class="display-3 mb-4">Complete Care.</h1>
-            <p class="mb-0">
-                Ce-cypharm connects you to an extensive network of over 900 pharmacies, ensuring 
-                guaranteed medication <br>availability, free health consultations, and comprehensive 
-                healthcare coverage—all in one place.
-            </p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            {% for first_image_category in first_image_categorys %}
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded shadow-sm">
-                    <div class="service-img rounded-top">
-                        {% if first_image_category.first_category_cecypharm_image %}
-                        <img 
-                            src="{{ first_image_category.first_category_cecypharm_image.url }}" 
-                            class="img-fluid rounded-top w-100" 
-                            style="height: 220px; object-fit: cover;" 
-                            alt="">
-                        {% endif %}
-                    </div>
-                    <div class="service-content rounded-bottom bg-light p-4">
-                        <div class="service-content-inner">
-                            <h5 class="mb-4">{{ first_image_category.first_category_cecypharm_title }}</h5>
-                            <p class="mb-4">{{ first_image_category.first_category_cecypharm_description|truncatechars:66 }}</p>
-
-                            <!-- Read More Button -->
-                            <a href="#" 
-                               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
-                               data-title="{{ first_image_category.first_category_cecypharm_title }}"
-                               data-description="{{ first_image_category.first_category_cecypharm_description }}"
-                               data-img="{{ first_image_category.first_category_cecypharm_image.url }}">
-                               Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
+      <h1 class="display-3 mb-4">Complete Care.</h1>
+      <p class="mb-0">
+        Ce-cypharm connects you to an extensive network of over 900 pharmacies, ensuring 
+        guaranteed medication <br>availability, free health consultations, and comprehensive 
+        healthcare coverage—all in one place.
+      </p>
     </div>
-</div>
-<!-- Services End -->
 
-<!-- Modal for Service Details -->
+    <div class="row g-4 justify-content-center">
+      {% for first_image_category in first_image_categorys %}
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded shadow-sm">
+          <div class="service-img rounded-top">
+            {% if first_image_category.first_category_cecypharm_image %}
+            <img 
+              src="{{ first_image_category.first_category_cecypharm_image.url }}" 
+              class="img-fluid rounded-top w-100" 
+              style="height: 220px; object-fit: cover;" 
+              alt="">
+            {% endif %}
+          </div>
+          <div class="service-content rounded-bottom bg-light p-4">
+            <div class="service-content-inner">
+              <h5 class="mb-4">{{ first_image_category.first_category_cecypharm_title }}</h5>
+              <p class="mb-4">{{ first_image_category.first_category_cecypharm_description|truncatechars:66 }}</p>
+
+              <!-- Read More Button -->
+              <a href="#" 
+                 class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+                 data-title="{{ first_image_category.first_category_cecypharm_title }}"
+                 data-description="{{ first_image_category.first_category_cecypharm_description }}"
+                 data-img="{{ first_image_category.first_category_cecypharm_image.url }}">
+                 Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Modal Section -->
 <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden" style="background-color: #ffffff;">
       
-      <div class="modal-header border-0 bg-primary text-white">
+      <div class="modal-header border-0 bg-white text-dark">
         <h5 class="modal-title fw-bold" id="serviceModalLabel"></h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       
-      <div class="modal-body p-0" id="serviceModalBody">
-        <!-- Dynamic Content from JS -->
+      <div class="modal-body p-3 p-md-4" id="serviceModalBody">
+        <div class="row g-3">
+          <div class="col-12 col-md-5">
+            <img id="serviceModalImage" src="" class="img-fluid rounded w-100" alt="Service Image">
+          </div>
+          <div class="col-12 col-md-7 d-flex align-items-center">
+            <p id="serviceModalDescription" class="mb-0"></p>
+          </div>
+        </div>
       </div>
       
-      <div class="modal-footer d-flex justify-content-between bg-light">
+      <div class="modal-footer d-flex flex-column flex-md-row justify-content-between bg-light gap-2">
         <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
         <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
       </div>
@@ -112,151 +114,135 @@
   </div>
 </div>
 
-
-
-
-
-
-<!-- About Start -->
+<!-- About Section -->
 <div class="container-fluid about bg-light py-5">
-    <div class="container py-5">
-        <div class="row g-5 align-items-center">
-            <!-- Text Column First -->
-            <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="section-title text-start mb-5">
-                    <h1 class="display-3 mb-4">Empowering You to Live Better.</h1>
-                    <p class="mb-4">At Ce-cypharm, we are committed to enhancing healthcare by providing a reliable and efficient supply chain for medical equipment and pharmaceuticals. 
-                      As a trusted partner in the healthcare industry, we ensure that high-quality medicines and medical devices 
-                      are delivered seamlessly to meet the needs of healthcare providers and their patients. Our dedicated team 
-                      works tirelessly to streamline the supply process, ensuring timely deliveries, product integrity, 
-                      and regulatory compliance. With a deep understanding of the pharmaceutical supply chain, we pride 
-                      ourselves on offering solutions that improve access to essential healthcare products. At CE-CyPharm, 
-                      we don't just supply medical products; we support better health outcomes by ensuring that healthcare 
-                      professionals have the resources they need to care for their patients effectively. Your health is our 
-                      mission, and we’re here to support you every step of the way.</p>
-                  
-                    <a href="{% url 'about'%}" class="btn btn-primary rounded-pill text-white py-3 px-5">Read More</a>
-                </div>
-            </div>
-
-            <!-- Image Column Second -->
-            <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
-                <div class="about-img pb-5 pe-5">
-                    <img src="{% static 'img/images/logo.png'%}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
-                   <!-- <div class="about-experience">05 years experience</div>-->
-                </div>
-            </div>
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="section-title text-start mb-5">
+          <h1 class="display-3 mb-4">Empowering You to Live Better.</h1>
+          <p class="mb-4">
+            At Ce-cypharm, we are committed to enhancing healthcare by providing a reliable and efficient supply chain for medical equipment and pharmaceuticals. 
+            As a trusted partner in the healthcare industry, we ensure that high-quality medicines and medical devices 
+            are delivered seamlessly to meet the needs of healthcare providers and their patients. Our dedicated team 
+            works tirelessly to streamline the supply process, ensuring timely deliveries, product integrity, 
+            and regulatory compliance. With a deep understanding of the pharmaceutical supply chain, we pride 
+            ourselves on offering solutions that improve access to essential healthcare products. At CE-CyPharm, 
+            we don't just supply medical products; we support better health outcomes by ensuring that healthcare 
+            professionals have the resources they need to care for their patients effectively. Your health is our 
+            mission, and we’re here to support you every step of the way.
+          </p>
+          <a href="{% url 'about'%}" class="btn btn-primary rounded-pill text-white py-3 px-5">Read More</a>
         </div>
-    </div>
-</div>
-<!-- About End -->
-
-
-        <!-- Feature Start -->
-        <div class="container-fluid feature py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-3 mb-4">How Does It Work?</h1>
-                    <p class="mb-0">We ensure that every service we provide contributes to a healthier and more vibrant society.</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Prescribe</h5>
-                                    <p class="mb-0">Once we’ve assessed your business, we’ll prescribe the right treatments to help your pharmacy grow</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Diagnose</h5>
-                                    <p class="mb-0">Our first job is to diagnose the issues with your pharmacy. How healthy is your digital ecosystem</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                         <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Deliver</h5>
-                                    <p class="mb-0">And whatever your budget, we will always deliver to your expectations, and analyse your results</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Dispense</h5>
-                                    <p class="mb-0">We dispense treatments in Branding, Web Development, SEO, Social Media and Paid Marketing</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
-
-
-
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-3 mb-4">Excellent pharmaceutical</h1>
-                    <p class="mb-0"> An efficient workflow, fast prescription filling, and prompt service <br> 
-                      all contributing to a superior healthcare experience.</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-  {% for second_image_category in second_image_categorys %}
-  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="blog-item rounded">
-      <div class="blog-img">
-        {% if second_image_category.second_category_cecypharm_image %}
-        <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="Image">
-        {% endif %}
       </div>
 
-      <div class="blog-centent p-4">
-        <!-- ✅ Title now clickable just like Read More -->
-        <a href="#" 
-           class="h4 read-more-btn d-block mb-2 text-decoration-none"
-           data-title="{{ second_image_category.second_category_cecypharm_title }}"
-           data-description="{{ second_image_category.second_category_cecypharm_description }}"
-           data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
-           {{ second_image_category.second_category_cecypharm_title }}
-        </a>
-
-        <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
-
-        <a href="#" 
-           class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
-           data-title="{{ second_image_category.second_category_cecypharm_title }}"
-           data-description="{{ second_image_category.second_category_cecypharm_description }}"
-           data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
-           Read More
-        </a>
+      <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
+        <div class="about-img pb-5 pe-5">
+          <img src="{% static 'img/images/logo.png' %}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
+        </div>
       </div>
     </div>
   </div>
-  {% endfor %}
 </div>
 
+<!-- Features Section -->
+<div class="container-fluid feature py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="display-3 mb-4">How Does It Work?</h1>
+      <p class="mb-0">We ensure that every service we provide contributes to a healthier and more vibrant society.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {% comment %} Feature items {% endcomment %}
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row-cols-1 feature-item p-4">
+          <div class="col-12">
+            <div class="feature-content d-flex flex-column">
+              <h5 class="mb-4">Prescribe</h5>
+              <p class="mb-0">Once we’ve assessed your business, we’ll prescribe the right treatments to help your pharmacy grow</p>
             </div>
+          </div>
         </div>
-        <!-- Blog End -->
+      </div>
+
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="row-cols-1 feature-item p-4">
+          <div class="col-12">
+            <div class="feature-content d-flex flex-column">
+              <h5 class="mb-4">Diagnose</h5>
+              <p class="mb-0">Our first job is to diagnose the issues with your pharmacy. How healthy is your digital ecosystem</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row-cols-1 feature-item p-4">
+          <div class="col-12">
+            <div class="feature-content d-flex flex-column">
+              <h5 class="mb-4">Deliver</h5>
+              <p class="mb-0">And whatever your budget, we will always deliver to your expectations, and analyse your results</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="row-cols-1 feature-item p-4">
+          <div class="col-12">
+            <div class="feature-content d-flex flex-column">
+              <h5 class="mb-4">Dispense</h5>
+              <p class="mb-0">We dispense treatments in Branding, Web Development, SEO, Social Media and Paid Marketing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Section -->
+<div class="container-fluid blog py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="display-3 mb-4">Excellent pharmaceutical</h1>
+      <p class="mb-0">An efficient workflow, fast prescription filling, and prompt service <br> all contributing to a superior healthcare experience.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {% for second_image_category in second_image_categorys %}
+      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            {% if second_image_category.second_category_cecypharm_image %}
+            <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="Image">
+            {% endif %}
+          </div>
+
+          <div class="blog-centent p-4">
+            <a href="#" 
+               class="h4 read-more-btn d-block mb-2 text-decoration-none"
+               data-title="{{ second_image_category.second_category_cecypharm_title }}"
+               data-description="{{ second_image_category.second_category_cecypharm_description }}"
+               data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
+               {{ second_image_category.second_category_cecypharm_title }}
+            </a>
+
+            <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
+
+            <a href="#" 
+               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+               data-title="{{ second_image_category.second_category_cecypharm_title }}"
+               data-description="{{ second_image_category.second_category_cecypharm_description }}"
+               data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
+               Read More
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 
- {% endblock %}
+{% endblock %}
