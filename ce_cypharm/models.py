@@ -92,7 +92,7 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 #----------------------------------------------------------------------
-#This is for product nav bar
+#This is for product page
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='category_images/', blank=True, null=True)
