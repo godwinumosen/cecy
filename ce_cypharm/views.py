@@ -161,3 +161,7 @@ def retail (request):
     return render (request, 'ce_cypharm/retail.html', {})
 
 
+def disclaimer (request):
+    return render (request, 'ce_cypharm/disclaimer.html', {})
+
+
