@@ -4,46 +4,47 @@
 
 
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Disclaimer</h1>  
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Disclaimer</h1>  
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Start -->
+<div class="container-fluid about bg-light py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-img pb-5 ps-5">
+                    <img src="{% static 'img/images/logo.png' %}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
+                    <!--<div class="about-experience">10 years experience</div>-->
+                </div>
             </div>
-        </div>
-        <!-- Header End -->
+            <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="section-title text-start mb-5">
+                    <h1 class="display-3 mb-4"> Disclaimer</h1>
+                    <p class="mb-4">All products listed on this site that are classified as medicines or 
+                        medical devices have been registered with the<strong>National Agency for Food 
+                            and Drug Administration and Control (NAFDAC)</strong> and are supplied 
+                            in accordance with Nigerian law.
+                    </p>
 
-
-        <!-- About Start -->
-        <div class="container-fluid about bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="about-img pb-5 ps-5">
-                            <img src="{% static 'img/images/logo.png' %}" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
-                            <!--<div class="about-experience">10 years experience</div>-->
-                        </div>
-                    </div>
-                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="section-title text-start mb-5">
-                            <h1 class="display-3 mb-4"> Disclaimer</h1>
-                            <p class="mb-4">All products listed on this site that are classified as medicines or 
-                                medical devices have been registered with the<strong>National Agency for Food 
-                                    and Drug Administration and Control (NAFDAC)</strong> and are supplied 
-                                    in accordance with Nigerian law.
-                            </p>
-
-                            <p class="mb-4"> Our retail pharmacy operates under the supervision of a licensed 
-                                Superintendent Pharmacist (PCN Reg. No. <em>xxxx</em>).</p>               
-                        </div>
-                    </div>
+                    <p class="mb-4"> Our retail pharmacy operates under the supervision of a licensed 
+                        Superintendent Pharmacist (PCN Reg. No. <em>xxxx</em>).</p>               
                 </div>
             </div>
         </div>
-        <!-- About End -->
+    </div>
+</div>
+
+<!-- End -->
 
 
 
- {% endblock %}
+{% endblock %}
 
 
 
