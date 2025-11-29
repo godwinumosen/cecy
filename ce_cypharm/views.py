@@ -151,15 +151,13 @@ def blog(request):
     return render(request, 'ce_cypharm/blog.html', {'blogs': blogs})
 #-----------------------------------------------------------------------------------------------
 
-def products(request):
-    categories = Category.objects.prefetch_related('products').all()
-    return render(request, 'ce_cypharm/products.html', {'categories': categories})
-
-
 def services (request):
     return render (request, 'ce_cypharm/services.html', {})
 
 def product2 (request):
     return render (request, 'ce_cypharm/product2.html', {})
+
+def retail (request):
+    return render (request, 'ce_cypharm/retail.html', {})
 
 

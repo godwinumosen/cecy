@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+  <div class="container text-center py-5" style="max-width: 900px;">
+    <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Retail Pharmacy</h3>
+  </div>
+</div>
+<!-- Header End -->
+  <div class="row g-4 justify-content-center">
+
+        <!-- Feature Start -->
+        <div class="container-fluid feature py-5">
+            <div class="container py-5">
+                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-3 mb-4">Retail Pharmacy</h1>
+                    <p class="mb-0">Ce-Cy Pharmacy — Community dispensing and patient care. We provide the following services</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="row-cols-1 feature-item p-4">
+                            <div class="col-12">
+                                <div class="feature-content d-flex flex-column">
+                                    <p class="mb-0">Prescription dispensing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row-cols-1 feature-item p-4">
+                            <div class="col-12">
+                                <div class="feature-content d-flex flex-column">
+                                    <p class="mb-0">Basic point-of-care checks (BP monitoring)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="row-cols-1 feature-item p-4">
+                            <div class="col-12">
+                                <div class="feature-content d-flex flex-column">
+                                    <p class="mb-0">OTC medicines</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="row-cols-1 feature-item p-4">
+                            <div class="col-12">
+                                <div class="feature-content d-flex flex-column">
+                                    <p class="mb-0">Adherence counselling and</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="row-cols-1 feature-item p-4">
+                            <div class="col-12">
+                                <div class="feature-content d-flex flex-column">
+                                    <p class="mb-0">Product referrals to healthcare facilities. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="{% url 'contact' %}" class="btn btn-primary rounded-pill text-white py-3 px-5">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
+
+{% endblock %}

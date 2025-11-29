@@ -75,19 +75,16 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">What We Do</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-                                <a href=" " class="dropdown-item">Retail Pharmacy</a>
-                                <a href=" " class="dropdown-item">Regulatory & Compliance</a>
-                        
+                                <a href="{% url 'retail' %}" class="dropdown-item">Retail Pharmacy</a>
                             </div>
                         </div>
-                         <a href="{% url 'products' %}" class="nav-item nav-link">Products</a>
-                         <a href="{% url 'product2' %}" class="nav-item nav-link">product2</a>
+                         <a href="{% url 'product2' %}" class="nav-item nav-link">Products</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{% url 'blog' %}" class="dropdown-item">Blog Post</a>
                                 <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
-                                <a href="{% url 'terms' %}" class="dropdown-item">Terms/Condition</a>
+                                <a href="{% url 'terms' %}" class="dropdown-item">Regulatory & Compliance</a>
                             </div>
                         </div>
                         <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
