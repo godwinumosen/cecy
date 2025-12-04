@@ -1117,11 +1117,18 @@ h3, .h3, h2, .h2, h1, .h1 h3, .h3, h2, .h2, h1, .h1 {
 
 /*** Contact Start ***/
 .contact {
-    background: linear-gradient(#198754, #efa286), url(../img/logo.png);
+    background: linear-gradient(#198754, #00B5E2), url(../img/logo.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.bg-breadcrumb {
+    background: linear-gradient(135deg, #00B5E2 0%, #007C9D 100%);
+    /* Aqua Blue → Deep Turquoise Blue */
+    background-size: cover;
+    background-position: center;
 }
 
 
