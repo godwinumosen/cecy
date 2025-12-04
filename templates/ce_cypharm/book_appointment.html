@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Book an Appointment - Ce-cypharm{% endblock %}
+{% block title %}Get a Quote - Ce-CyPharm{% endblock %}
 
 {% block content %}
 <style>
@@ -106,7 +106,7 @@
 <section class="appointment-section">
   <div class="appointment-overlay"></div>
   <div class="appointment-container">
-    <h2>Book an Appointment</h2>
+    <h2>Get a Quote</h2>
     <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}
