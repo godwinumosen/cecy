@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}Ce-cypharm{% endblock %}</title>
+    <title>{% block title %}Ce-CyPharm{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -39,8 +39,6 @@
 
     <link rel="icon" type="image/png" href="{% static 'img/images/flavicon.png' %}">
 
-
-
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -64,19 +62,14 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                          <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="{% url 'about' %}" class="dropdown-item">About Ce-cypharm</a>
-                                <a href="{% url 'our_team' %}" class="dropdown-item">Team Profile(s)</a>
-                            </div>
-                        </div>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
+                      
                         <a href="{% url 'product2' %}" class="nav-item nav-link">Products</a>
                          <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">What We Do</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-                                <a href="{% url 'retail' %}" class="dropdown-item">Retail Pharmacy</a>
+                                <!-- <a href="{% url 'retail' %}" class="dropdown-item">Retail Pharmacy</a> -->
                                 <a href="{% url 'disclaimer' %}" class="dropdown-item">Disclaimer</a>
                             </div>
                         </div>
@@ -135,8 +128,8 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Ce-cypharm</h4>
-                            <p style="color: #fff;">Ce-cypharm Limited is a leading pharmaceutical supply chain company in Nigeria and one of the fastest growing in West Africa. 
+                            <h4 class="text-white mb-4">Ce-CyPharm</h4>
+                            <p style="color: #fff;">Ce-CyPharm Limited is a leading Pharmaceutical supply chain company in Nigeria and one of the fastest growing in West Africa. 
                                 We specialize in the efficient distribution of medical equipment and pharmaceuticals.
                             </p>
                             <div class="d-flex align-items-center">
@@ -150,12 +143,12 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Ce-cypharm Link</h4>
+                            <h4 class="mb-4 text-white">Ce-CyPharm Link</h4>
                             <a href="{% url 'home' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Home</a>
                             <a href="{% url 'about' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> About Us</a>
                             <a href="{% url 'contact' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
                             <a href="{% url 'blog' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
-                            <a href="{% url 'our_team' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Team Profile(s)</a>
+                            <!-- <a href="{% url 'our_team' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> Team Profile(s)</a> -->
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
@@ -163,7 +156,7 @@
                             <h4 class="mb-4 text-white">Services Links</h4>
                             <a href="{% url 'book_appointment'%}"style="color: #fff;"target="_blank"><i class="fas fa-angle-right me-2"target="_blank"></i>Book Appointment</a>
                             <a href="{% url 'services' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i>  Services</a>
-                            <a href="{% url 'retail' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i>  Retail Pharmacy</a>
+                            <!-- <a href="{% url 'retail' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i>  Retail Pharmacy</a> -->
                             <a href="{% url 'terms' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i>  Regulatory & Compliance</a>
                             <a href="{% url 'faq' %}"style="color: #fff;"><i class="fas fa-angle-right me-2"></i> FAQ</a>
                         </div>
@@ -201,7 +194,6 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-        
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

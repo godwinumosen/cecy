@@ -2,12 +2,7 @@ from django.contrib import admin
 # Register your models here.
 from . import models
 from .models import MainImageCarousel,CecypharmFirstCategoryImage,CecypharmSecondCategoryImage,BlogPost
-from .models import Category, Product
-
-'''class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'date', 'time')
-    list_filter = ('date',)
-admin.site.register(Appointment, AppointmentAdmin)'''
+#from .models import Category, Product
     
 #This model is for the fist carousel image
 class MainImageCarouselAdmin (admin.ModelAdmin):
@@ -35,11 +30,3 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_filter = ('date_posted',)
     
 #-------------------------------------------------------------------------------------------------
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'nafdac_number')
-    list_filter = ('category',)
