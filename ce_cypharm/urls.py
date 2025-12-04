@@ -21,7 +21,7 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('services/', views.services, name='services'),
     path('product2/', views.product2, name='product2'),  
-    path('retail/', views.retail, name='retail'), 
-    path('disclaimer/', views.disclaimer, name='disclaimer'), 
+   # path('retail/', views.retail, name='retail'), 
+ 
     
 ]
