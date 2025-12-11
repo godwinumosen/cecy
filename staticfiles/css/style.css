@@ -155,7 +155,7 @@
 /* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
     .custom-title {
-        font-size: 1.6rem; /* Further reduce font size on smaller phones */
+        font-size: 1.7rem; /* Further reduce font size on smaller phones */
     }
 }
 
