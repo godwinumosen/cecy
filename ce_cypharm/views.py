@@ -89,6 +89,7 @@ def book_appointment(request):
                 to=[appointment.email],
             )
             msg.attach_alternative(html_content, "text/html")
+            
             msg.send()
             # (Optional) Send admin notification in plain text or similar HTML
             send_mail(
