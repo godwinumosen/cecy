@@ -217,23 +217,24 @@
           </div>
 
           <div class="blog-centent p-4">
+            <h5 class="mb-4">{{ second_image_category.second_category_cecypharm_title }}</h5>
             <a href="#" 
                class="h4 read-more-btn d-block mb-2 text-decoration-none"
                data-title="{{ second_image_category.second_category_cecypharm_title }}"
                data-description="{{ second_image_category.second_category_cecypharm_description }}"
                data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
-               {{ second_image_category.second_category_cecypharm_title }}
+              
             </a>
 
             <p class="my-4">{{ second_image_category.second_category_cecypharm_description|truncatechars:66 }}</p>
 
-            <a href="#" 
+            <!--<a href="#" 
                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
                data-title="{{ second_image_category.second_category_cecypharm_title }}"
                data-description="{{ second_image_category.second_category_cecypharm_description }}"
                data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
                Read More
-            </a>
+            </a>-->
           </div>
         </div>
       </div>
@@ -241,6 +242,76 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- Blog Start -->
+<section class="container-fluid blog py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="display-3 mb-4">Excellent and High Quality Pharmacy</h1>
+      <p class="mb-0">
+        Discover health tips, product insights, and wellness stories from our Ce-Cy Pharm Limited experts.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for post in blogs %}
+      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            <img src="{{ post.image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="{{ post.title }}">
+          </div>
+          <div class="blog-centent p-4">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted">
+                <i class="fa fa-calendar-alt text-primary"></i> {{ post.date_posted|date:"d M Y" }}
+              </p>
+              <span class="text-muted"><i class="fa fa-user text-primary"></i> {{ post.author }}</span>
+            </div>
+            <a href="#" class="h4 d-block mb-3">{{ post.title }}</a>
+            <p class="my-4">{{ post.description|truncatechars:100 }}</p>
+            <a href="#" 
+               class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
+               data-title="{{ post.title }}"
+               data-description="{{ post.description }}"
+               data-img="{{ post.image.url }}">
+               Read More
+            </a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center text-muted">No blog posts available yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Blog End -->
+
+<!-- Modal for Service Details -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden" style="background-color: #ffffff;">
+
+      <!-- Modal Header (White) -->
+      <div class="modal-header border-0 bg-white text-dark">
+        <h5 class="modal-title fw-bold" id="serviceModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body p-4" id="serviceModalBody">
+        <!-- Dynamic Content from JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer d-flex justify-content-between bg-light">
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
+      </div>
+    </div>
+  </div>
 
 
 {% endblock %}

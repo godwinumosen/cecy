@@ -41,7 +41,18 @@ class HomeView(ListView):
     #the SECOND  category of the home page "What We Offe"
         context['second_image_categorys'] = CecypharmSecondCategoryImage.objects.all()
         
+    #the blog  category of the home page ""
+        context['blogs'] = BlogPost.objects.all()
+        
         return context  
+    
+
+def blog (request):
+    return render (request, 'ce_cypharm/blog.html', {})
+
+def blog(request):
+    blogs = BlogPost.objects.all().order_by('-date_posted')
+    return render(request, 'ce_cypharm/blog.html', {'blogs': blogs})
     
 def About (request):
     return render (request, 'ce_cypharm/about.html') 
@@ -143,12 +154,7 @@ def message (request):
 def our_team (request):
     return render (request, 'ce_cypharm/our_team.html', {})
 
-def blog (request):
-    return render (request, 'ce_cypharm/blog.html', {})
 
-def blog(request):
-    blogs = BlogPost.objects.all().order_by('-date_posted')
-    return render(request, 'ce_cypharm/blog.html', {'blogs': blogs})
 #-----------------------------------------------------------------------------------------------
 
 def services (request):
