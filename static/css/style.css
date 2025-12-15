@@ -165,7 +165,7 @@ a:hover {
 }
 
 .display-3 {
-    font-size:30;
+    font-size:37;
     font-weight: 50;
     line-height: 1.2;
 }
@@ -1146,7 +1146,7 @@ h3, .h3, h2, .h2, h1, .h1 h3, .h3, h2, .h2, h1, .h1 {
 
 /*** Contact Start ***/
 .contact {
-    background: linear-gradient(#198754, #00B5E2), url(../img/logo.png);
+    background: linear-gradient(#198754, #008D72), url(../img/isto.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1154,11 +1154,20 @@ h3, .h3, h2, .h2, h1, .h1 h3, .h3, h2, .h2, h1, .h1 {
 }
 
 .bg-breadcrumb {
-    background: linear-gradient(135deg, #00B5E2 0%, #007C9D 100%);
-    /* Aqua Blue → Deep Turquoise Blue */
-    background-size: cover;
-    background-position: center;
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0, 141, 114, 0.85),
+      rgba(25, 135, 84, 0.85)
+    ),
+    url("../img/isto.png");
+
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
+
 
 
 .contact .contact-form .btn.btn-light {
