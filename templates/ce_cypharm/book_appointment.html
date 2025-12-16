@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Get a Quote - Ce-Cy Pharm Limited{% endblock %}
+{% block title %}Request a Quote{% endblock %}
 
 {% block content %}
 <style>
@@ -106,7 +106,7 @@
 <section class="appointment-section">
   <div class="appointment-overlay"></div>
   <div class="appointment-container">
-    <h2>Get a Quote</h2>
+    <h2> Request a Quote</h2>
     <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}
