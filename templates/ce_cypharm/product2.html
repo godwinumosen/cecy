@@ -24,6 +24,19 @@
 <div class="container mt-4">
   <div class="row g-4">
 
+        <!-- 1. Drug Envelopes -->
+    <div class="col-md-6 col-lg-4">
+      <div class="blog-item rounded shadow-sm hover-shadow">
+        <div class="blog-img">
+          <img src="{% static 'img/project_image/catheters.jpg' %}" class="img-fluid w-100" style="height: 200px; object-fit: cover;" alt="Catheters">
+        </div>
+        <div class="blog-centent p-4">
+          <h5 class="d-block mb-3">Drug Envelopes</h5>
+          <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#modal2">View Products</button>
+        </div>
+      </div>
+    </div>
+
     <!-- 2. Catheters -->
     <div class="col-md-6 col-lg-4">
       <div class="blog-item rounded shadow-sm hover-shadow">
@@ -121,6 +134,50 @@
 <!-- ===========================
       MODALS (all unchanged)
 =========================== -->
+
+<!-- . Drug Envelopes -->
+<div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Drug Envelopes</h5>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Standard Prescription Envelopes</h6>
+        <p>Plain and branded paper envelopes for dispensing prescription medicines in retail and hospital pharmacies.</p>
+
+        <h6>Child-Resistant Prescription Envelopes</h6>
+        <p>Safety-focused envelopes designed to reduce accidental access by children.</p>
+
+        <h6>Moisture-Resistant Drug Envelopes</h6>
+        <p>Coated envelopes offering added protection against humidity and environmental exposure.</p>
+
+        <h6>Customized / Branded Envelopes</h6>
+        <p>Printed with pharmacy or institutional branding, dosage instructions, and regulatory information.</p>
+
+        <h6>Multi-Size Prescription Envelopes</h6>
+        <p>Available in small, medium, and large sizes to accommodate tablets, capsules, sachets, and blister packs.</p>
+
+        <h6>NAFDAC</h6>
+        <p>(Packaging and consumable item — non-drug).</p>
+
+        <p><strong>Instruction:</strong> Call +234XXXXXXXXX to place an order.</p>
+        <p><strong>Bulk & Institutional Supply Available.</strong> </p>
+      </div>
+
+    
+       <div class="modal-footer d-flex flex-column flex-md-row justify-content-between bg-light gap-2">
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'book_appointment' %}" id="serviceModalAction" class="btn btn-primary px-4">Book Now</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <!-- 2. Catheters -->
 <div class="modal fade" id="modal2" tabindex="-1">
