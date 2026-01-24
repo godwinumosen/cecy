@@ -18,7 +18,7 @@
           <div class="service-img rounded-top">
             {% if first_image_category.first_category_cecypharm_image %}
             <img 
-              src="{{ first_image_category.first_category_cecypharm_image.url }}" 
+              src="{{first_image_category.first_category_cecypharm_image.url}}" 
               class="img-fluid rounded-top w-100" 
               style="height: 220px; object-fit: cover;" 
               alt="">
@@ -26,8 +26,8 @@
           </div>
           <div class="service-content rounded-bottom bg-light p-4">
             <div class="service-content-inner">
-              <h5 class="mb-4">{{ first_image_category.first_category_cecypharm_title }}</h5>
-              <p class="mb-4">{{ first_image_category.first_category_cecypharm_description }}</p>
+              <h5 class="mb-4">{{first_image_category.first_category_cecypharm_title}}</h5>
+              <p class="mb-4">{{first_image_category.first_category_cecypharm_description}}</p>
 
               <!-- Read More Button -->
                <!--<a href="#" 
@@ -174,7 +174,7 @@
         <div class="blog-item rounded">
           <div class="blog-img">
             {% if second_image_category.second_category_cecypharm_image %}
-            <img src="{{ second_image_category.second_category_cecypharm_image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="Image">
+            <img src="{{second_image_category.second_category_cecypharm_image.url}}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="Image">
             {% endif %}
           </div>
 
@@ -182,13 +182,13 @@
             <h5 class="mb-4">{{ second_image_category.second_category_cecypharm_title }}</h5>
             <a href="#" 
                class="h4 read-more-btn d-block mb-2 text-decoration-none"
-               data-title="{{ second_image_category.second_category_cecypharm_title }}"
-               data-description="{{ second_image_category.second_category_cecypharm_description }}"
-               data-img="{{ second_image_category.second_category_cecypharm_image.url }}">
+               data-title="{{second_image_category.second_category_cecypharm_title}}"
+               data-description="{{second_image_category.second_category_cecypharm_description}}"
+               data-img="{{second_image_category.second_category_cecypharm_image.url}}">
               
             </a>
 
-            <p class="my-4">{{ second_image_category.second_category_cecypharm_description }}</p>
+            <p class="my-4">{{second_image_category.second_category_cecypharm_description}}</p>
 
             <!--<a href="#" 
                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
@@ -219,15 +219,15 @@
 
     <div class="row g-4 justify-content-center">
       {% for post in blogs %}
-      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+      <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.{{forloop.counter}}s">
         <div class="blog-item rounded">
           <div class="blog-img">
-            <img src="{{ post.image.url }}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="{{ post.title }}">
+            <img src="{{post.image.url}}" class="img-fluid w-100" style="height: 230px; object-fit: cover;" alt="{{ post.title }}">
           </div>
           <div class="blog-centent p-4">
             <div class="d-flex justify-content-between mb-4">
               <p class="mb-0 text-muted">
-                <i class="fa fa-calendar-alt text-primary"></i> {{ post.date_posted|date:"d M Y" }}
+                <i class="fa fa-calendar-alt text-primary"></i> {{post.date_posted|date:"d M Y"}}
               </p>
               <span class="text-muted"><i class="fa fa-user text-primary"></i> {{ post.author }}</span>
             </div>
@@ -235,9 +235,9 @@
             <p class="my-4">{{ post.description|truncatechars:100 }}</p>
             <a href="#" 
                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2 read-more-btn"
-               data-title="{{ post.title }}"
-               data-description="{{ post.description }}"
-               data-img="{{ post.image.url }}">
+               data-title="{{post.title}}"
+               data-description="{{post.description}}"
+               data-img="{{post.image.url}}">
                Read More
             </a>
           </div>
