@@ -28,7 +28,7 @@ class CecypharmFirstCategoryImage(models.Model):
     first_category_cecypharm_title = models.CharField(max_length=255, blank=True, null=True)
     first_category_cecypharm_description = models.TextField()
     first_category_cecypharm_slug = models.SlugField (max_length=255,blank=True, null=True)
-    first_category_cecypharm_image = models.FileField(upload_to=' first_image/') 
+    first_category_cecypharm_image = models.FileField(upload_to='first_image/') 
     first_category_cecypharm_publish_date = models.DateTimeField (auto_now_add= True)
     first_category_cecypharm_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -65,7 +65,7 @@ class CecypharmSecondCategoryImage(models.Model):
     second_category_cecypharm_title = models.CharField(max_length=255, blank=True, null=True)
     second_category_cecypharm_description = models.TextField()
     second_category_cecypharm_slug = models.SlugField (max_length=255,blank=True, null=True)
-    second_category_cecypharm_image = models.FileField(upload_to=' second_image/') 
+    second_category_cecypharm_image = models.FileField(upload_to='second_image/') 
     second_category_cecypharm_publish_date = models.DateTimeField (auto_now_add= True)
     second_category_cecypharm_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
